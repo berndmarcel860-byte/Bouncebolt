@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://obstacle"]
+
+[ext_resource type="Script" path="res://scripts/Obstacle.gd" id="1_o"]
+
+[sub_resource type="RectangleShape2D" id="RectTop"]
+size = Vector2(140, 700)
+
+[sub_resource type="RectangleShape2D" id="RectBottom"]
+size = Vector2(140, 700)
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_o")
+
+[node name="Top" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 1
+
+[node name="TopCollision" type="CollisionShape2D" parent="Top"]
+shape = SubResource("RectTop")
+
+[node name="TopVisual" type="ColorRect" parent="Top"]
+offset_left = -70.0
+offset_top = -350.0
+offset_right = 70.0
+offset_bottom = 350.0
+color = Color(1, 0.121569, 0.588235, 1)
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 1
+
+[node name="BottomCollision" type="CollisionShape2D" parent="Bottom"]
+shape = SubResource("RectBottom")
+
+[node name="BottomVisual" type="ColorRect" parent="Bottom"]
+offset_left = -70.0
+offset_top = -350.0
+offset_right = 70.0
+offset_bottom = 350.0
+color = Color(0.0705882, 0.74902, 1, 1)
+
+[node name="ScoreGate" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+
+[node name="GateCollision" type="CollisionShape2D" parent="ScoreGate"]
+shape = SubResource("RectTop")
+scale = Vector2(0.142857, 0.9)
