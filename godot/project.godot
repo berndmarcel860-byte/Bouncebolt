@@ -1,0 +1,36 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+config/name="Bounce Bolt"
+run/main_scene="res://scenes/Main.tscn"
+config/icon="res://icon.svg"
+
+[display]
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[input]
+tap={
+"deadzone": 0.5,
+"events": [Object(InputEventScreenTouch,"resource_local_to_scene":false,"device":-1,"window_id":0,"index":0,"position":Vector2(0, 0),"pressed":true,"double_tap":false,"canceled":false,"pressure":1.0), Object(InputEventMouseButton,"resource_local_to_scene":false,"device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)]
+}
+
+[physics]
+common/physics_ticks_per_second=60
+
+[rendering]
+renderer/rendering_method="mobile"
+anti_aliasing/quality/msaa_2d=1
+textures/canvas_textures/default_texture_filter=0
+viewport/transparent_background=false
+
+autoload/SaveService="*res://scripts/SaveService.gd"
+autoload/PlatformServices="*res://scripts/PlatformServices.gd"
+autoload/MonetizationService="*res://scripts/MonetizationService.gd"
+autoload/ProgressionService="*res://scripts/ProgressionService.gd"
+autoload/DailyService="*res://scripts/DailyService.gd"
